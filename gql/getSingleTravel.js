@@ -5,6 +5,7 @@ export const GET_SINGLE_TRAVEL = gql`
 		offer(where: { slug: $slug }) {
 			amenities
 			createdAt
+			short
 			id
 			images {
 				url

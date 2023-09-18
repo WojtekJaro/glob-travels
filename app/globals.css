@@ -15,6 +15,26 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+html {
+  font-size: 0.9rem;
+}
+
+
+.custom-title {
+  position: relative;
+}
+
+.custom-title::before {
+  background: #ffbf00;
+    border-radius: 10px;
+    bottom: -6px;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    width: 105px;
+}
 
 /* body {
   color: rgb(var(--foreground-rgb));

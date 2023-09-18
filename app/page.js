@@ -11,6 +11,7 @@ export default async function Home() {
   console.log(offers)
 
 	return (
+    
   <main className='flex min-h-screen flex-col items-center justify-between p-24'>
     {offers.map(offer => <Link key={offers.id} href={`/oferta/${offer.slug}`}> {offer.title} </Link>)}
 
