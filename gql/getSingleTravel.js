@@ -19,6 +19,19 @@ export const GET_SINGLE_TRAVEL = gql`
 			description {
 				html
 			}
+			rooms {
+				accomodation
+				bathroom
+				equipment
+				extraFee
+				id
+				image {
+					url
+				}
+				max
+				title
+				view
+			}
 		}
 	}
 `

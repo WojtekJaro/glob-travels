@@ -8,16 +8,18 @@ import ImageModal from '@/components/ImageModal'
 import StarIcon from '@/components/StarIcon'
 import Amenities from '@/components/Amenities'
 import TravelWeather from '@/components/TravelWeather'
+import PopularRooms from '@/components/PopularRooms'
 
 export async function getData(slug) {
 	const data = await cmsConnect(GET_SINGLE_TRAVEL, { slug: slug })
-	
+
 	return data
 }
 
 export default async function OfferPage({ params }) {
 	const { offer } = await getData(params.nazwa)
-	console.log(offer.images[0])
+
+	console.log(offer)
 	const travelRating = () => {
 		const items = []
 
@@ -38,23 +40,33 @@ export default async function OfferPage({ params }) {
 								<StarIcon key={item} />
 							))}
 						</div>
+					</div>
+					<TravelImages images={offer.images} />
+					<div className='mt-10'>
+						<h3 className='text-3xl font-bold mb-5 custom-title'>Atuty Oferty</h3>
+						<p>{offer.short}</p>
+						<Amenities items={offer.amenities}></Amenities>
+					</div>
+					<div dangerouslySetInnerHTML={{ __html: offer.description.html }}></div>
+					<div className='mt10'>
+						<h3 className='text-3xl font-bold mb-5 custom-title'>Pokoje</h3>
+						
+							{offer.rooms.length > 0 ? (
+								<PopularRooms rooms={offer.rooms}/>
+								
+							) : (
+								<p>Nie znaleziono dostępnych pokoi.</p>
+							)}
+
+							
 						
 					</div>
-          <TravelImages images={offer.images} />
-          <div className="mt-10">
-            <h3 className="text-3xl font-bold mb-5 custom-title">Atuty Oferty</h3>
-            <p>{offer.short}</p>
-            <Amenities items={offer.amenities}></Amenities>
-          </div>
-          <div dangerouslySetInnerHTML={{__html: offer.description.html}}>
-            
-          </div>
 				</div>
 
 				<div class='col-span-1'>2</div>
 			</div>
-			<div className="my-5">
-			<TravelWeather location={offer.location}/>
+			<div className='my-5'>
+				<TravelWeather location={offer.location} />
 			</div>
 		</div>
 	)
