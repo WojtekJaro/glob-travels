@@ -1,3 +1,4 @@
+
 import { cmsConnect } from '@/utils/cmsConnector'
 import { GET_SINGLE_TRAVEL } from '@/gql/getSingleTravel'
 import React from 'react'
@@ -62,6 +63,7 @@ export default async function OfferPage({ params }) {
 						
 					</div>
 				</div>
+				
 
 				<div class='col-span-1'>2</div>
 			</div>

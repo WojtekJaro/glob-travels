@@ -1,14 +1,23 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, CardHeader, CardBody, Typography, Button } from '@material-tailwind/react'
 import { HomeModernIcon, PaperAirplaneIcon, UserGroupIcon } from '@heroicons/react/24/outline'
-import { RoomsDrawer } from './RoomsDrawer'
+import { RoomDrawer } from './RoomDrawer'
 
 const PopularRooms = ({ rooms }) => {
+	const [isOpen, setIsOpen] = React.useState(false)
+    const handleDetails = (room) => {
+        setCurrentRoom(room)
+        setIsOpen(true)
+        
+    }
+    console.log(handleDetails)
+    const [currentRoom, setCurrentRoom] = React.useState(null)
+
 	return (
-		<div>
-			{rooms.slice(0,2).map(room => (
-				<Card key={room.id} className='w-full max-w-[48rem] flex-row border-solid border rounded-lg'>
+		<div className="mt-5">
+			{rooms.slice(0, 2).map(room => (
+				<Card onClick={()=>handleDetails(room)} key={room.id} className='mb-4 w-full max-w-[48rem] flex-row border-solid border rounded-lg'>
 					<CardHeader shadow={false} floated={false} className='m-0 w-2/5 shrink-0 rounded-r-none'>
 						<img src={room.image.url} alt={room.title} className='h-full w-full object-cover ltr rounded-s-lg' />
 					</CardHeader>
@@ -55,9 +64,8 @@ const PopularRooms = ({ rooms }) => {
 					</CardBody>
 				</Card>
 			))}
-			<Button className="py-2 mt-2"  variant="outlined">Pokaż wszytkie pokoje</Button>
-                <RoomsDrawer/>
-
+			
+			<RoomDrawer room={currentRoom} isOpen={isOpen} setIsOpen={setIsOpen} />
 		</div>
 	)
 }
