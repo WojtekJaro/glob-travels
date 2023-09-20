@@ -1,4 +1,3 @@
-
 import { cmsConnect } from '@/utils/cmsConnector'
 import { GET_SINGLE_TRAVEL } from '@/gql/getSingleTravel'
 import React from 'react'
@@ -10,6 +9,7 @@ import StarIcon from '@/components/StarIcon'
 import Amenities from '@/components/Amenities'
 import TravelWeather from '@/components/TravelWeather'
 import PopularRooms from '@/components/PopularRooms'
+import OrderForm from '@/components/OrderForm'
 
 export async function getData(slug) {
 	const data = await cmsConnect(GET_SINGLE_TRAVEL, { slug: slug })
@@ -51,21 +51,14 @@ export default async function OfferPage({ params }) {
 					<div dangerouslySetInnerHTML={{ __html: offer.description.html }}></div>
 					<div className='mt10'>
 						<h3 className='text-3xl font-bold mb-5 custom-title'>Pokoje</h3>
-						
-							{offer.rooms.length > 0 ? (
-								<PopularRooms rooms={offer.rooms}/>
-								
-							) : (
-								<p>Nie znaleziono dostępnych pokoi.</p>
-							)}
 
-							
-						
+						{offer.rooms.length > 0 ? <PopularRooms rooms={offer.rooms} /> : <p>Nie znaleziono dostępnych pokoi.</p>}
 					</div>
 				</div>
-				
 
-				<div class='col-span-1'>2</div>
+				<div class='col-span-1'>
+					<OrderForm />
+				</div>
 			</div>
 			<div className='my-5'>
 				<TravelWeather location={offer.location} />
