@@ -10,11 +10,21 @@ import Amenities from '@/components/Amenities'
 import TravelWeather from '@/components/TravelWeather'
 import PopularRooms from '@/components/PopularRooms'
 import OrderForm from '@/components/OrderForm'
+import { GET_ALL_TRAVELS } from '@/gql/getAllTravels'
 
 export async function getData(slug) {
 	const data = await cmsConnect(GET_SINGLE_TRAVEL, { slug: slug })
 
 	return data
+}
+export async function generateStaticParams( ) {
+	const data = await cmsConnect(GET_ALL_TRAVELS)
+	return data.offers.map((offer)=>{
+		return {
+			nazwa: offer.slug
+		}
+	}
+	)
 }
 
 export default async function OfferPage({ params }) {

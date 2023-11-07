@@ -16,7 +16,7 @@ export default async function ResultsPage({params}) {
     <div>
         {params.query}
         <h2>Wyniki Wyszukiwania:</h2>
-        {offers.map(offer => (<SearchCard offer={offer}/>))}
+        {offers.map(offer => (<SearchCard key={offer.id} offer={offer}/>))}
         </div>
     )
 }
