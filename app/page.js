@@ -1,6 +1,8 @@
 import SearchForm from '@/components/SearchForm'
+import TravelImages from '@/components/TravelImages'
 import { GET_ALL_TRAVELS } from '@/gql/getAllTravels'
 import { cmsConnect } from '@/utils/cmsConnector'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export async function getData() {
@@ -16,10 +18,11 @@ export default async function Home() {
 			<div>
 				<SearchForm />
 			</div>
-
+			
 			{offers.map(offer => (
 				<Link key={offers.id} href={`/oferta/${offer.slug}`}>
 					
+					<Image src={offer.images[0].url} width={500} height={500} alt='Picture of the author' />
 					{offer.title}{' '}
 				</Link>
 			))}

@@ -7,6 +7,9 @@ query {
       id
       title
       slug
+      images {
+        url
+      }
     }
   }
 
