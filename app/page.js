@@ -1,3 +1,4 @@
+import Carousel from '@/components/Carousel'
 import SearchForm from '@/components/SearchForm'
 import TravelImages from '@/components/TravelImages'
 import { GET_ALL_TRAVELS } from '@/gql/getAllTravels'
@@ -12,20 +13,16 @@ export async function getData() {
 export default async function Home() {
 	const { offers } = await getData()
 	console.log(offers)
+	const response = fetch(`http://api.nbp.pl/api/exchangerates/tables/1/
+	`)
 
 	return (
-		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
+		<main className='flex min-h-screen flex-col items-center justify-between p-24 '>
 			<div>
 				<SearchForm />
+
+				<Carousel offers={offers}></Carousel>
 			</div>
-			
-			{offers.map(offer => (
-				<Link key={offers.id} href={`/oferta/${offer.slug}`}>
-					
-					<Image src={offer.images[0].url} width={500} height={500} alt='Picture of the author' />
-					{offer.title}{' '}
-				</Link>
-			))}
 		</main>
 	)
 }
