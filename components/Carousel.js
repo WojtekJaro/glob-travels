@@ -6,32 +6,32 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Carousel(offers) {
-	const oferta = offers.offers
-	console.log(oferta)
+	const ofert = offers.offers
+	console.log(ofert)
 	return (
-		<div>
-			
-				{oferta.map(oferta => (
-          <Link key={oferta.id} href={`oferta/${oferta.slug}`}>
-					<Card className='mt-6 w-96'>
-						<CardHeader color='blue-gray' className='relative h-56'>
-							<img src={oferta.images[0].url} alt={oferta.title} />
-						</CardHeader>
-						<CardBody>
-							<Typography variant='h5' color='blue-gray' className='mb-2'>
-								{oferta.title}
-							</Typography>
-						</CardBody>
-						<CardFooter className='pt-0'>
-							<Button>Sprawdź ofertę!</Button>
-						</CardFooter>
-					</Card>
-          </Link>
-				))}
-			
+		<main className='flex min-h-screen flex-col items-center justify-between p-24 '>
 			<div>
-				<h1></h1>
+				<div>
+					{ofert.map(ofert => (
+						<Link key={ofert.id} href={`oferta/${ofert.slug}`}>
+							<Card className='mt-6 w-96'>
+								<CardHeader color='blue-gray' className='relative h-56'>
+									<img src={ofert.images[0].url} alt={ofert.title} />
+								</CardHeader>
+								<CardBody>
+									<Typography variant='h5' color='blue-gray' className='mb-2'>
+										{ofert.title}
+									</Typography>
+								</CardBody>
+								<CardFooter className='pt-0'>
+									<Button>Sprawdź ofertę!</Button>
+								</CardFooter>
+							</Card>
+						</Link>
+					))}
+				</div>
+				
 			</div>
-		</div>
+		</main>
 	)
 }
