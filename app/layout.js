@@ -1,5 +1,5 @@
 import NavBar from '@/components/NavBar'
-import './globals.css'
+import './globals.scss'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
 
@@ -13,8 +13,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang='en'>
-			<body className={inter.className}>
+		<html lang='pl'>
+			<body className={inter.className} >
 				
 					<NavBar />
 					{children}

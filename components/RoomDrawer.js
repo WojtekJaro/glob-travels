@@ -1,8 +1,8 @@
-
 import { Typography } from '@material-tailwind/react'
 import React from 'react'
 
 export function RoomDrawer({ isWide, children, isOpen, setIsOpen }) {
+	
 	return (
 		<main
 			className={
@@ -14,11 +14,10 @@ export function RoomDrawer({ isWide, children, isOpen, setIsOpen }) {
 			<section
 				className={
 					' w-screen right-0 absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  ' +
-					(isOpen ? ' translate-x-0 ' : ' translate-x-full ') + (isWide ? "max-w-xl" : "max-w-sm")
+					(isOpen ? ' translate-x-0 ' : ' translate-x-full ') +
+					(isWide ? 'max-w-xl' : 'max-w-sm')
 				}>
-				<article className='relative  pb-10 flex flex-col space-y-6 h-full'>
-					{children}
-				</article>
+				<article className='relative  pb-10 flex flex-col space-y-6 h-full'>{children}</article>
 			</section>
 			<section
 				className=' w-screen h-full cursor-pointer '

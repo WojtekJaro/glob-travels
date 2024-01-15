@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+}
+html {
+	font-size: 0.9rem;
+  
+}
+body {
+	max-width: 1200px;
+	position: relative;
+	text-align: center;
+	margin: auto;
+}
+
+
+.custom-title {
+	position: relative;
+}
+
+.custom-title::before {
+	background: #ffbf00;
+	border-radius: 10px;
+	bottom: -6px;
+	content: '';
+	display: block;
+	height: 4px;
+	left: 0;
+	position: absolute;
+	width: 105px;
+}
+
+
+.orderForm {
+	width: auto;
+	padding: 15px 5px 5px 5px;
+	position: sticky;
+  top: 75px;
+}
+

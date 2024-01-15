@@ -6,7 +6,6 @@ import { cmsConnect } from '@/utils/cmsConnector'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
 export async function getData() {
 	const data = await cmsConnect(GET_ALL_TRAVELS)
 	return data
@@ -18,13 +17,14 @@ export default async function Home() {
 	`)
 
 	return (
-		<main className='flex min-h-screen flex-col items-center justify-between p-24 '>
-			<div >
-				
+		<main className='relative flex min-h-screen flex-col items-center justify-center py-20'>
+		
 				<SearchForm />
-
+			
 				<Carousel offers={offers}></Carousel>
-			</div>
+				<Carousel offers={offers}></Carousel>
+				<Carousel offers={offers}></Carousel>
+			
 		</main>
 	)
 }
