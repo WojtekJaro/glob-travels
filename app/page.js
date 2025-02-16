@@ -22,8 +22,7 @@ export default async function Home() {
 				<SearchForm />
 			
 				<Carousel offers={offers}></Carousel>
-				<Carousel offers={offers}></Carousel>
-				<Carousel offers={offers}></Carousel>
+				
 			
 		</main>
 	)

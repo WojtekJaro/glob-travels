@@ -10,6 +10,7 @@ query {
       images {
         url
       }
+      promotion
     }
   }
 

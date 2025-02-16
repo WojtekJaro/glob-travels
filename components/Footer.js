@@ -20,19 +20,19 @@ const currentYear = new Date().getFullYear();
  
 export default function Footer() {
   return (
-    <footer className="relative w-full">
+    <footer className="relative w-full bg-blue-400 ">
       <div className="mx-auto w-full max-w-7xl px-8">
-        <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
+        <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2 py-7">
           <Typography variant="h5" className="mb-6">
-            Material Tailwind
+            Biuro podróży
           </Typography>
           <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (
               <ul key={title}>
                 <Typography
                   variant="small"
-                  color="blue-gray"
-                  className="mb-3 font-medium opacity-40"
+                  color="white"
+                  className="mb-3 font-medium opacity-90"
                 >
                   {title}
                 </Typography>
@@ -41,7 +41,7 @@ export default function Footer() {
                     <Typography
                       as="a"
                       href="#"
-                      color="gray"
+                      color="white"
                       className="py-1.5 font-normal transition-colors hover:text-blue-gray-900"
                     >
                       {link}

@@ -40,11 +40,19 @@ export default async function OfferPage({ params }) {
 	}
 
 	return (
-		<div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 text-sm'>
+		<div className='mx-auto max-w-7xl px-2 py-20 sm:px-6 lg:px-8 text-sm'>
 			<div class='grid grid-cols-4 gap-4'>
 				<div className='col-span-3'>
 					<div className='my-4'>
-						<h1 className='text-4xl font-bold pt-5 pb-2'>{offer.title}</h1>
+						<div className='flex '>
+							<h1 className='text-4xl font-bold pt-5 pb-2 '>{offer.title} </h1>
+							{offer.promotion ? (
+								<div className='w-30 h-10 text-center p-2 ml-2 bg-amber-400 text-black text-gray-800 rounded-xl font-medium '>
+									PROMOCJA
+								</div>
+							) : null}
+						</div>
+
 						<div className='flex pb-10'>
 							{travelRating().map(item => (
 								<StarIcon key={item} />

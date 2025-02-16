@@ -32,6 +32,7 @@ export const GET_SINGLE_TRAVEL = gql`
 				title
 				view
 			}
+			promotion
 		}
 	}
 `

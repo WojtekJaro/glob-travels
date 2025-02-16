@@ -17,25 +17,23 @@
 }
 html {
 	font-size: 0.9rem;
-  
 }
 body {
-	max-width: 1200px;
+	// max-width: 1200px;
 	position: relative;
-	text-align: center;
 	margin: auto;
 }
 
-
 .custom-title {
 	position: relative;
+	
 }
 
 .custom-title::before {
 	background: #ffbf00;
 	border-radius: 10px;
 	bottom: -6px;
-	content: '';
+	
 	display: block;
 	height: 4px;
 	left: 0;
@@ -43,11 +41,9 @@ body {
 	width: 105px;
 }
 
-
 .orderForm {
 	width: auto;
 	padding: 15px 5px 5px 5px;
 	position: sticky;
-  top: 75px;
+	top: 75px;
 }
-

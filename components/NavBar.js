@@ -18,7 +18,7 @@ function classNames(...classes) {
 export default function NavBar() {
 	return (
     
-		<Disclosure as='nav' className='bg-gray-100git s' >
+		<Disclosure as='nav' className='bg-white fixed top-0 left-0 right-0 z-[1000]' >
 			{({ open }) => (
 				<>
 					<div className='relative mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 '>
@@ -41,7 +41,7 @@ export default function NavBar() {
 									<Link href={'/'}>
 										<img
 											className='h-8 w-auto'
-											src='https://tailwindui.com/img/logos/mark.svg?color=amber&shade=500'
+											src='https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500'
 											alt='Your Company'
 										/>
 									</Link>
